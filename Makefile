@@ -6,13 +6,13 @@
 #    By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 16:47:17 by baltes-g          #+#    #+#              #
-#    Updated: 2023/03/06 17:15:22 by baltes-g         ###   ########.fr        #
+#    Updated: 2023/03/08 17:56:06 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
 NAME=fractol
-CFLAGS=-Wall -Wextra -Werror -g
+CFLAGS=-Wall -Wextra -Werror -O2
 LIB_DIR=INC/libft/
 MLX_DIR=INC/minilibx_opengl
 MLX=libmlx.a
