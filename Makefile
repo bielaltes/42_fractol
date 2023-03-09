@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 16:47:17 by baltes-g          #+#    #+#              #
-#    Updated: 2023/03/08 17:56:06 by baltes-g         ###   ########.fr        #
+#    Updated: 2023/03/09 17:38:38 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,15 @@ INC_MLX=mlx.h
 LIB=libft.a
 LIB_INC=libft.h
 
-SRC =	SRC/MAIN/fractol.c
+SRC =	SRC/main.c 					\
+		SRC/SETS/sets.c				\
+		SRC/SETS/mandelbrot.c		\
+		SRC/UTILS/color.c			\
+		SRC/UTILS/hooks.c			\
+		SRC/UTILS/init.c			\
+		SRC/UTILS/parse.c			\
+		SRC/UTILS/pixel.c			
 		
-BNS_DIR = BNS/
-BNS_NAME = checker
 
 OBJ=$(SRC:.c=.o)
 

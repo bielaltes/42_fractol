@@ -3,11 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baltes-g <baltes-g@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:49:09 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/09 15:49:34 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:21:09 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../INC/headers/fractol.h"
+#include "../../INC/headers/fractol.h"
+
+long long color(int iter, int max)
+{
+    if (iter >= max)
+        return (0x00000000);
+    return ((iter*0x00FFFFFF)/max);
+}
