@@ -6,16 +6,17 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:24:39 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/09 18:12:15 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:26:38 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INC/headers/fractol.h"
 
-void error(char *str)
+int error(char *str)
 {
-    perror(str);
+    ft_printf("%s\n", str);
     exit(2);
+    return (1);
 }
 
 int main(int argc, char **argv)
@@ -26,8 +27,10 @@ int main(int argc, char **argv)
     {
         if (!init_fractol(&fractol, argv))
             error("Inalization error");
-        mandelbrot(&fractol);
+        paint(&fractol);
         mlx_key_hook(fractol.mlx_win, key_hook, &fractol);
+        mlx_mouse_hook(fractol.mlx_win, mouse_hook, &fractol);
+        mlx_hook(fractol.mlx_win, X, 0, error, "Program escaped");
         mlx_loop((&fractol)->mlx);
     }
     else

@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:16:14 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/09 18:32:39 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:03:55 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int init_fractol(t_fractol *fractol, char **str)
 {
-    fractol->set = MANDELBROT;
+    if (ft_strncmp(str[1], "mandelbrot", 0xFFFFFFFF) == 0)
+        fractol->set = MANDELBROT;
+    else if (ft_strncmp(str[1], "julia", 0xFFFFFFFF) == 0)
+        fractol->set = JULIA;
+    else
+        error("Fractal no disponible");;
     fractol->MAX = 150;
     fractol->zoom = 0;
     fractol->mlx = mlx_init();

@@ -47,8 +47,7 @@ void	mandelbrot(float Px, float Py)
 
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
+	
 	
 
 	mlx = mlx_init();
