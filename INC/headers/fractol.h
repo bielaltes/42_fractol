@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:38:48 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/10 20:25:40 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:22:19 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ typedef struct s_fractol
 	int base_x;
 	int base_y;
 	int MAX;
-	int zoom;
+	double zoom;
+	double juliax;
+	double juliay;
 	t_image img;
 	
 }		t_fractol;
@@ -62,7 +64,7 @@ void		mandelbrot(t_fractol *fractol);
 void		julia(t_fractol *fractol);
 long long	color(int iter, int max);
 int			key_hook(int key_code, t_fractol *fractol);
-int			mouse_hook(int key_code, t_fractol *fractol);
+int			mouse_hook(int key_code, int x, int y, t_fractol *fractol);
 int			init_fractol(t_fractol *fractol, char **str);
 void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
 int 		parse(int argc, char **argv);
