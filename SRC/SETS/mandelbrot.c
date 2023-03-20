@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:22:38 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/12 19:18:09 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:47:21 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int compute(t_fractol *fractol, double Px, double Py)
 {
-    double x0 = ((Px + fractol->base_x) / (WIDTH * fractol->zoom)) *2.47 -2;
-	double y0 = ((Py + fractol->base_y)/ (HEIGHT * fractol->zoom)) * 2.24 -1.12;
+	double x0 = (( (Px ) / (fractol->zoom * (WIDTH)) + (fractol->base_x))) *2.47 -2;
+	double y0 = ((Py ) / (fractol->zoom * (HEIGHT)) + (fractol->base_y)) * 2.24 -1.12;
 	double x;
 	double y;
 

@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:16:14 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/12 18:51:22 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:48:11 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int init_fractol(t_fractol *fractol, char **str)
     }
     else
         error("Fractal no disponible");;
-    fractol->MAX = 200;
+    fractol->MAX = 80;
     fractol->mode = 1;
     fractol->color = 0xd7afd7;
     fractol->zoom = 1;
-    fractol->base_x = 0;
-    fractol->base_y = 0;
+    fractol->base_x = 0.0f;
+    fractol->base_y = 0.0f;
     fractol->mlx = mlx_init();
 	fractol->mlx_win = mlx_new_window(fractol->mlx, WIDTH, HEIGHT, "fract-ol");
 	fractol->img.img = mlx_new_image(fractol->mlx, WIDTH, HEIGHT);

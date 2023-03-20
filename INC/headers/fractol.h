@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:38:48 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/12 20:35:38 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:24:02 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # define HEIGHT 750
-# define WIDTH 750
+# define WIDTH 1000
 # define MANDELBROT 0
 # define JULIA 1
 # define W 13
@@ -46,10 +46,10 @@ typedef struct s_fractol
 	int mode;
 	void	*mlx;
 	void	*mlx_win;
-	int base_x;
-	int base_y;
+	double base_x;
+	double base_y;
 	int MAX;
-	long double zoom;
+	double zoom;
 	double juliax;
 	double juliay;
 	long long color;
