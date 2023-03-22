@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   burning.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:38:41 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/22 18:45:12 by baltes-g         ###   ########.fr       */
+/*   Created: 2023/03/21 15:09:15 by baltes-g          #+#    #+#             */
+/*   Updated: 2023/03/22 18:45:16 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 static int	compute(t_fractol *fractol, double Px, double Py)
 {
+	double	x;
+	double	y;
 	int		iter;
 	double	aux;
-	double	x0;
-	double	y0;
 
+	fractol->x0 = (Px / (WIDTH * fractol->zoom) + fractol->base_x) * 3.5 -2.5;
+	fractol->y0 = (Py / (HEIGHT * fractol->zoom) + fractol->base_y) * 2 -1;
 	iter = 0;
-	x0 = (Px / (WIDTH * fractol->zoom) + fractol->base_x) * 4 -2;
-	y0 = (Py / (HEIGHT * fractol->zoom) + fractol->base_y) * 4 -2;
-	while (x0 * x0 + y0 * y0 < 4 && iter < fractol->max)
+	x = fractol->x0;
+	y = fractol->y0;
+	while (x * x + y * y < 4 && iter < fractol->max)
 	{
-		aux = x0 * x0 - y0 * y0 + fractol->juliax;
-		y0 = 2 * x0 * y0 + fractol->juliay;
-		x0 = aux;
+		aux = x;
+		x = x * x - y * y + fractol->x0;
+		y = fabs(2 * y * aux) + fractol->y0;
 		iter++;
 	}
 	return (iter);
 }
 
-void	julia(t_fractol *fractol)
+void	burning_ship(t_fractol *fractol)
 {
 	int	i;
 	int	j;

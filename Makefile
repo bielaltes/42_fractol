@@ -6,13 +6,13 @@
 #    By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 16:47:17 by baltes-g          #+#    #+#              #
-#    Updated: 2023/03/12 19:19:27 by baltes-g         ###   ########.fr        #
+#    Updated: 2023/03/22 18:30:46 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
 NAME=fractol
-CFLAGS=-Wall -Wextra -Werror -O2
+CFLAGS=-Wall -Wextra -Werror -O3
 LIB_DIR=INC/libft/
 MLX_DIR=INC/minilibx_opengl
 MLX=libmlx.a
@@ -28,8 +28,10 @@ SRC =	SRC/main.c 					\
 		SRC/UTILS/hooks.c			\
 		SRC/UTILS/init.c			\
 		SRC/UTILS/parse.c			\
+		SRC/UTILS/double_atoi.c		\
 		SRC/UTILS/pixel.c			\
 		SRC/SETS/julia.c			\
+		SRC/SETS/burning.c			
 		
 
 OBJ=$(SRC:.c=.o)
