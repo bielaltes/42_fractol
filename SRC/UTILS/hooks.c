@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:04:39 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/23 12:42:36 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:44:59 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ int	mouse_hook(int key_code, int x, int y, t_fractol *fractol)
 		}
 		else if (key_code == 2 && fractol->set == JULIA)
 		{
-			fractol->juliax -= 0.01  / fractol->zoom;
-			fractol->juliay -= 0.01  / fractol->zoom;
+			fractol->juliax -= 0.01 / fractol->zoom;
+			fractol->juliay -= 0.01 / fractol->zoom;
 		}
 		paint(fractol);
 	}
