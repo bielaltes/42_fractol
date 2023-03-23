@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:49:09 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/22 17:54:54 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:32:05 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,14 @@ static void	compute_color1(int iter, int *r, int *g, int *b)
 static void	compute_color2(int iter, int *r, int *g, int *b)
 {
 	*r = 0xFF - iter;
+	if (*r < 0)
+		*r *= -1;
 	*g = 0xFF - iter;
+	if (*g < 0)
+		*g *= -1;
 	*b = 0xFF - iter;
+	if (*b < 0)
+		*b *= -1;
 }
 
 static void	compute_color3(int iter, int *r, int *g, int *b)

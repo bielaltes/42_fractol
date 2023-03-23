@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:04:39 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/22 18:35:28 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:42:36 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static void	zoom(t_fractol *fractol, double zoom, double x, double y)
 	double	x1;
 	double	y1;
 
-	x0 = (x / (WIDTH >> 1) - 0.5) * pow(fractol->zoom, -1);
-	y0 = (y / (HEIGHT >> 1) - 0.5) * pow(fractol->zoom, -1);
-	x1 = (x / (WIDTH >> 1) - 0.5) * pow(fractol->zoom * zoom, -1);
-	y1 = (y / (HEIGHT >> 1) - 0.5) * pow(fractol->zoom * zoom, -1);
+	x0 = (x / (WIDTH >> 1) - 0.5) / fractol->zoom;
+	y0 = (y / (HEIGHT >> 1) - 0.5) / fractol->zoom;
+	x1 = (x / (WIDTH >> 1) - 0.5) / (fractol->zoom * zoom);
+	y1 = (y / (HEIGHT >> 1) - 0.5) / (fractol->zoom * zoom);
 	fractol->base_x += x0 - x1;
 	fractol->base_y += y0 - y1;
 	fractol->zoom *= zoom;
-	if (fractol->max < 300)
+	if (fractol->max < 350)
 		fractol->max += 1;
 }
 
@@ -41,11 +41,11 @@ static void	key_hook2(int key_code, t_fractol *fractol)
 	else if (key_code == MODE4)
 		fractol->mode = 4;
 	else if (key_code == Q)
-		zoom(fractol, 1.25, WIDTH / 2, HEIGHT / 2);
-	else if (key_code == E)
 		zoom(fractol, 0.8, WIDTH / 2, HEIGHT / 2);
+	else if (key_code == E)
+		zoom(fractol, 1.25, WIDTH / 2, HEIGHT / 2);
 	else if (key_code == ESC)
-		error("Program escaped");
+		die_error("Program escaped", fractol);
 }
 
 int	key_hook(int key_code, t_fractol *fractol)
@@ -79,13 +79,13 @@ int	mouse_hook(int key_code, int x, int y, t_fractol *fractol)
 			zoom(fractol, 1.25, x, y);
 		else if (key_code == 1 && fractol->set == JULIA)
 		{
-			fractol->juliax += 0.01;
-			fractol->juliay += 0.01;
+			fractol->juliax += 0.01 / fractol->zoom;
+			fractol->juliay += 0.01 / fractol->zoom;
 		}
 		else if (key_code == 2 && fractol->set == JULIA)
 		{
-			fractol->juliax -= 0.01;
-			fractol->juliay -= 0.01;
+			fractol->juliax -= 0.01  / fractol->zoom;
+			fractol->juliay -= 0.01  / fractol->zoom;
 		}
 		paint(fractol);
 	}

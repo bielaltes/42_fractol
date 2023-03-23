@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 16:47:17 by baltes-g          #+#    #+#              #
-#    Updated: 2023/03/22 18:30:46 by baltes-g         ###   ########.fr        #
+#    Updated: 2023/03/23 12:39:56 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,9 +58,20 @@ bonus:
 clean:
 	rm -f $(OBJ) $(OBJ_BNS)
 
+clean_all:
+	rm -f $(OBJ) $(OBJ_BNS)
+	@$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -C $(MLX_DIR) clean
+
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all	
+fclean_all: clean_all
+	rm -f $(NAME)
+	@$(MAKE) -C $(LIB_DIR) fclean 
 
-.PHONY: clean fclean all re bonus
+re: fclean all
+
+re_all: fclean_all all
+
+.PHONY: clean clean_all fclean fclean_all all re re_all bonus

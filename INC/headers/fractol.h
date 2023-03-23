@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:38:48 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/22 18:36:53 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:22:04 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ typedef struct s_fractol
 	t_image		img;
 }		t_fractol;
 
-int			error(char *str);
+int			die_error(char *str, t_fractol *fractol);
 void		mandelbrot(t_fractol *fractol);
 void		julia(t_fractol *fractol);
 void		burning_ship(t_fractol *fractol);
 long long	color(int iter, int max, t_fractol *fractol);
 int			key_hook(int key_code, t_fractol *fractol);
 int			mouse_hook(int key_code, int x, int y, t_fractol *fractol);
-int			init_fractol(t_fractol *fractol, char **str);
+int			init_fractol(t_fractol *fractol);
 void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
 int			parse(int argc, char **argv, t_fractol *fractol);
 void		paint(t_fractol *fractol);

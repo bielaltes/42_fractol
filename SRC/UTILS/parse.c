@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:04:43 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/22 18:31:32 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:27:15 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	usage(char *exe)
 void	print_ins(void)
 {
 	printf("\n    ####    WELCOME TO BALTES-G FRACTOL     ####\n\n");
-	printf("    -Scroll to zoom\n");
+	printf("    -Scroll to zoom or use E Q to zoom center\n");
 	printf("    -Change the colors using the numbers [1 .. 4]\n");
 	printf("    -Use the arrows to move\n");
-	printf("    -Press m, j, b to change fractols\n");
+	printf("    -Press M, J, B to change fractols\n");
 	printf("    -If on julia, change params by clicking\n\n");
 }
 
