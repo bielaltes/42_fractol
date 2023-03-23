@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 16:47:17 by baltes-g          #+#    #+#              #
-#    Updated: 2023/03/23 12:39:56 by baltes-g         ###   ########.fr        #
+#    Updated: 2023/03/23 12:57:10 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ MLX_FLAGS=-LINC/minilibx_opengl -lmlx -framework OpenGL -framework AppKit
 INC_MLX=mlx.h
 LIB=libft.a
 LIB_INC=libft.h
+INC=INC/headers/fractol.h
 
 SRC =	SRC/main.c 					\
 		SRC/SETS/sets.c				\
