@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:24:39 by baltes-g          #+#    #+#             */
-/*   Updated: 2023/03/23 12:52:58 by baltes-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 13:08:37 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 
 	if (parse(argc, argv, &fractol))
 	{
-		if (init_fractol(&fractol))
+		if (!init_fractol(&fractol))
 			die_error("Initialization error", &fractol);
 		print_ins();
 		paint(&fractol);
